@@ -3,13 +3,13 @@
 @section('content')
 
 <div class="container">
-	<div class="panel panel-info">
+	<div class="panel panel-primary">
 		<div class="panel-heading">Tunjangan</div>
 		<div class="panel-body">
-		<a class="btn btn-primary" href="{{url('tunjangan/create')}}">Tambah Data</a><br><br>
+		<a class="btn btn-success" href="{{url('tunjangan/create')}}">Tambah Data</a><br><br>
 			<table class="table table-striped table-bordered table-hover">
 				<thead>
-					<tr class="bg-primary">
+					<tr class="bg-info">
 						<th>No</th>
 						<th>Kode Tunjangan</th>
 						<th>Jabatan</th>
@@ -33,7 +33,7 @@
 						<td> {{$tunjangans->jumlah_anak}} </td>
 						<td> Rp.{{$tunjangans->besaran_uang}} </td>
 						<td>
-							<a class="btn btn-xs btn-info" href=" {{route('tunjangan.edit', $tunjangans->id)}} ">Ubah</a>
+							<a class="btn btn-xs btn-warning" href=" {{route('tunjangan.edit', $tunjangans->id)}} ">Ubah</a>
 						</td>
 						<td>
 							<form method="POST" action=" {{route('tunjangan.destroy', $tunjangans->id)}} ">

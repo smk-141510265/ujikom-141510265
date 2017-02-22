@@ -14,7 +14,7 @@
                        
 
                         <div class="form-group{{ $errors->has('kode_lembur_id') ? ' has-error' : '' }}">
-                            <label for="kode_lembur_id" class="col-md-4 control-label">Nama Golongan</label>
+                            <label for="kode_lembur_id" class="col-md-4 control-label">Kode Lembur</label>
 
                             <div class="col-md-6">
                                 <select name="kode_lembur_id" class="form-control">
@@ -33,7 +33,7 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('pegawai_id') ? ' has-error' : '' }}">
-                            <label for="pegawai_id" class="col-md-4 control-label">Nama Jabatan</label>
+                            <label for="pegawai_id" class="col-md-4 control-label">NIP</label>
 
                             <div class="col-md-6">
                                 <select name="pegawai_id" class="form-control">
@@ -51,7 +51,7 @@
                             </div>
                         </div>
                        <div class="form-group{{ $errors->has('jumlah_jam') ? ' has-error' : '' }}">
-                            <label for="jumlah_jam" class="col-md-4 control-label">Besaran Uang</label>
+                            <label for="jumlah_jam" class="col-md-4 control-label">Jumlah Jam</label>
 
                             <div class="col-md-6">
                                 {!! Form::text('jumlah_jam',null,['class'=>'form-control']) !!}
@@ -63,8 +63,9 @@
                             </div>
                         </div>
                         <div class="form-group">
-						{!! Form::submit('Save',['class'=>'btn btn-primary form-control']) !!}
-					</div>
+                        <br>
+                        {!! Form::submit('Simpan',['class'=>'btn btn-primary </br>form-control']) !!}
+                    </div>
 				{!! Form::close() !!}
                 </div>
             </div>

@@ -1,7 +1,5 @@
 @extends('layouts.app')
-@section('lemburp')
-    active
-@endsection
+
 @section('content')
 <div class="container">
     <div class="row">
@@ -64,13 +62,16 @@
                             </div>
                         </div>
 
-                       
                         <div class="form-group{{ $errors->has('status') ? ' has-error' : '' }}">
-                            <label for="status" class="col-md-4 control-label">Status </label>
-
+                            <label for="status" class="col-md-4 control-label">Status</label>
                             <div class="col-md-6">
-                                <input id="status" type="text" class="form-control" name="status" value="{{ old('status') }}"  autofocus>
-
+                                <select name="status" class="form-control">
+                                    <option value="">Pilih</option>
+                                    <option value="Belum Menikah">Belum Menikah</option>
+                                    <option value="Menikah">Menikah</option>
+                                    <option value="Duda">Duda</option>
+                                    <option value="Janda">Janda</option>
+                                </select>
                                 @if ($errors->has('status'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('status') }}</strong>
@@ -78,12 +79,11 @@
                                 @endif
                             </div>
                         </div>
-
                         <div class="form-group{{ $errors->has('jumlah_anak') ? ' has-error' : '' }}">
-                            <label for="jumlah_anak" class="col-md-4 control-label">Jumlah Anak </label>
+                            <label for="jumlah_anak" class="col-md-4 control-label">Jumlah Anak</label>
 
                             <div class="col-md-6">
-                                <input id="jumlah_anak" type="text" class="form-control" name="jumlah_anak" value="{{ old('jumlah_anak') }}"  autofocus>
+                               <input class="w3-input w3-border" type="number" value="0" name="jumlah_anak" min="0" max="11">
 
                                 @if ($errors->has('jumlah_anak'))
                                     <span class="help-block">

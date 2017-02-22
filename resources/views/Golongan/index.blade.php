@@ -9,7 +9,7 @@
 		<a class="btn btn-success" href="{{url('golongan/create')}}">Tambah Data</a><br><br>
 			<table class="table table-striped table-bordered table-hover">
 				<thead>
-					<tr class="bg-primary">
+					<tr class="bg-info">
 						<th>No</th>
 						<th>Kode Golongan</th>
 						<th>Nama Golongan</th>

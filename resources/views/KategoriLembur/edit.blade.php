@@ -74,7 +74,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-						{!! Form::submit('Save',['class'=>'btn btn-primary form-control']) !!}
+						{!! Form::submit('Simpan',['class'=>'btn btn-primary form-control']) !!}
 					</div>
 				{!! Form::close() !!}
                 </div>

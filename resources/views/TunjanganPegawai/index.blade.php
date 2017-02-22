@@ -3,13 +3,13 @@
 @section('content')
 
 <div class="container">
-	<div class="panel panel-info">
+	<div class="panel panel-primary">
 		<div class="panel-heading">Tunjangan Pegawai</div>
 		<div class="panel-body">
-		<a class="btn btn-primary" href="{{url('tunja/create')}}">Tambah Data</a><br><br>
+		<a class="btn btn-success" href="{{url('tunja/create')}}">Tambah Data</a><br><br>
 			<table class="table table-striped table-bordered table-hover">
 				<thead>
-					<tr class="bg-primary">
+					<tr class="bg-info">
 						<th>No</th>
 						<th>Kode Tunjangan</th>
 						<th>Pegawai NIP</th>
@@ -25,7 +25,7 @@
 						<td> {{$tunjas->Tunjangan->kode_tunjangan}} </td>
 						<td> {{$tunjas->Pegawai->nip}} </td>
 						<td>
-							<a class="btn btn-xs btn-info" href=" {{route('tunja.edit', $tunjas->id)}} ">Ubah</a>
+							<a class="btn btn-xs btn-warning" href=" {{route('tunja.edit', $tunjas->id)}} ">Ubah</a>
 						</td>
 						<td>
 							<form method="POST" action=" {{route('tunja.destroy', $tunjas->id)}} ">

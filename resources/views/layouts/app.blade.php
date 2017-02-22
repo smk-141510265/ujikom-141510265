@@ -11,7 +11,7 @@
     <title>{{ config('app.name', 'Penggajian') }}</title>
 
     <!-- Styles -->
-    <link href="/css/app.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Scripts -->
     <script>
@@ -19,6 +19,20 @@
             'csrfToken' => csrf_token(),
         ]); ?>
     </script>
+
+    <style type="text/css">
+    
+        body {
+    background-color: lightblue;
+}
+p {
+    font-family: "Times New Roman", Georgia, Serif;
+}
+p.oblique {
+    font-style: oblique;
+}
+
+    </style>
 </head>
 <body>
     <div id="app">
@@ -60,8 +74,10 @@
                            <li><a href="{{ url('/lembur') }}">Lembur Pegawai</a></li>
                            <li><a href="{{ url('/tunjangan') }}">Tunjangan</a></li>
                            <li><a href="{{ url('/tunja') }}">Tunjangan Pegawai</a></li>
+                            <li><a href="{{ url('/penggajian') }}">Penggajian</a></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                    <span class="glyphicon glyphicon-user"></span>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 

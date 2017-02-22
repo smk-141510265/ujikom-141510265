@@ -101,6 +101,10 @@ class TunjanganController extends Controller
     public function edit($id)
     {
         //
+        $golongan=Golongan::all();
+        $jabatan=Jabatan::all();
+        $tunjangan=Tunjangan::find($id);
+        return view('tunjangan.edit',compact('jabatan','golongan','tunjangan'));
     }
 
     /**
@@ -113,6 +117,47 @@ class TunjanganController extends Controller
     public function update(Request $request, $id)
     {
         //
+         $tunjangan=Tunjangan::where('id',$id)->first();
+        if($tunjangan['kode_tunjangan'] != Request('kode_tunjangan')){
+            $roles=[
+                'kode_tunjangan'=>'required|unique:tunjangans',
+                'jabatan_id'=>'required',
+                'golongan_id'=>'required',
+                'besaran_uang'=>'required',
+                'jumlah_anak'=>'required',
+                'status'=>'required',
+            ];
+        }
+        else{
+            $roles=[
+                'kode_tunjangan'=>'required',
+                'jabatan_id'=>'required',
+                'golongan_id'=>'required',
+                'besaran_uang'=>'required',
+                'jumlah_anak'=>'required',
+                'status'=>'required',
+            ];
+        }
+        $sms=[
+                'kode_tunjangan.required'=>'jangan kosong',
+                'kode_tunjangan.unique'=>'jangan sama',
+                'jabatan_id.required'=>'jangan kosong',
+                'golongan_id.required'=>'jangan kosong',
+                'besaran_uang.required'=>'jangan kosong',
+                'status.required'=>'jangan kosong',
+                'jumlah_anak.required'=>'jangan kosong',
+            ];
+            $validasi= Validator::make(Input::all(),$roles,$sms);
+            if($validasi->fails()){
+                return redirect()->back()
+                        ->WithErrors($validasi)
+                        ->WithInput();
+            }
+
+            $update=Request::all();
+            $tunjangan=Tunjangan::find($id);
+            $tunjangan->update($update);
+            return redirect('tunjangan');
     }
 
     /**

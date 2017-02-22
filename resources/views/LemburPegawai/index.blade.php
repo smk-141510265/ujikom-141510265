@@ -6,7 +6,7 @@
 	<div class="panel panel-info">
 		<div class="panel-heading">Lembur Pegawai</div>
 		<div class="panel-body">
-		<a class="btn btn-primary" href="{{url('lembur/create')}}">Tambah Data</a><br><br>
+		<a class="btn btn-success" href="{{url('lembur/create')}}">Tambah Data</a><br><br>
 			<table class="table table-striped table-bordered table-hover">
 				<thead>
 					<tr class="bg-primary">
@@ -29,7 +29,7 @@
 						<td> {{$pegawais->jumlah_jam}} </td>
 						
 						<td>
-							<a class="btn btn-xs btn-info" href=" {{route('lembur.edit', $pegawais->id)}} ">Ubah</a>
+							<a class="btn btn-xs btn-warning" href=" {{route('lembur.edit', $pegawais->id)}} ">Ubah</a>
 						</td>
 						<td>
 							<form method="POST" action=" {{route('lembur.destroy', $pegawais->id)}} ">

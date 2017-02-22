@@ -106,6 +106,42 @@ class TunjanganpegawaiController extends Controller
     public function update(Request $request, $id)
     {
         //
+         $tunjanganpegawai=TunjanganPegawai::where('id',$id)->first();
+        if($tunjanganpegawai['kode_tunjangan_id'] != Request('kode_tunjangan_id')){
+
+        $rules=[
+                'kode_tunjangan_id'=>'required|unique:tunjangan_pegawais,kode_tunjangan_id',
+                'pegawai_id'=>'required',
+               
+               
+                ];
+        }
+        else{
+
+        $rules=[
+                'kode_tunjangan_id'=>'required',
+                'pegawai_id'=>'required',
+                
+                ];
+        }
+        $sms=[
+                
+                'kode_tunjangan_id.required'=>'Tidak Boleh Kosong',
+                'pegawai_id.required'=>'Tidak Boleh Kosong',
+                'kode_tunjangan_id.unique'=>'Kode Sudah Ada',
+               
+                ];
+        $validasi=Validator::make(Input::all(),$rules,$sms);
+        if($validasi->fails()){
+            return redirect()->back()
+            ->WithErrors($validasi)
+            ->WithInput();
+        }
+
+        $update=Request::all();
+        $tunjanganpegawai=TunjanganPegawai::find($id);
+        $tunjanganpegawai->update($update);
+        return redirect('tunja');
     }
 
     /**
@@ -117,5 +153,8 @@ class TunjanganpegawaiController extends Controller
     public function destroy($id)
     {
         //
+        $tunjanganpegawai = TunjanganPegawai::findOrFail($id);
+        $tunjanganpegawai->delete();
+        return redirect()->route('tunja.index')->with('alert-success', 'Data Berhasil Dihapus.');
     }
 }
