@@ -11,14 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
-Route::resource('/jabatan', 'JabatanController');
+
 
 Auth::routes();
 
+Route::get('/', 'HomeController@index');
 Route::get('/home', 'HomeController@index');
+Route::resource('/jabatan', 'JabatanController');
 Route::resource('/golongan', 'GolonganController');
 Route::resource('/pegawai', 'PegawaiController');
 Route::resource('/kategori', 'KategorilemburController');

@@ -10,6 +10,7 @@
                         
          <table class="table table-striped table-hover table-bordered">
           <center>
+          <p><img width="200px" height="200px" src="<?php echo url('assets/image/') ?>/<?php echo $penggajian->tunjanganpegawai->pegawai->photo; ?>" class="img-circle" alt="Cinque Terre" ></p>
 
                         <h3>Nama : {{$penggajian->TunjanganPegawai->Pegawai->User->name}}</h3>
                         <h4>NIP  : {{$penggajian->TunjanganPegawai->Pegawai->nip}}</h4>

@@ -23,7 +23,7 @@
     <style type="text/css">
     
         body {
-    background-color: lightblue;
+    background-color: #D0D0D0;
    background-image:url('www.jpg');
    
 }

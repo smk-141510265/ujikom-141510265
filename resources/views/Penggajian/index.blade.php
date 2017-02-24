@@ -42,7 +42,7 @@
 
                             <div>
 
-                                    <a class="btn btn-primary" href="{{route('penggajian.edit',$penggajians->id)}}">Ambil</a>
+                                    <a class="btn btn-primary" href="{{route('penggajian.edit',$penggajians->id)}}"><span class="glyphicon glyphicon-oks">Ambil</a>
 
                                 </div>
 
