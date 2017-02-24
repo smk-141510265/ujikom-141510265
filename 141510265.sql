@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 23 Feb 2017 pada 10.14
+-- Generation Time: 24 Feb 2017 pada 07.21
 -- Versi Server: 10.1.19-MariaDB
 -- PHP Version: 7.0.13
 
@@ -88,7 +88,7 @@ CREATE TABLE `kategory_lemburs` (
 
 INSERT INTO `kategory_lemburs` (`id`, `kode_lembur`, `jabatan_id`, `golongan_id`, `besaran_uang`, `created_at`, `updated_at`) VALUES
 (1, 'KL-01', 1, 1, 10000, '2017-02-21 04:40:46', '2017-02-21 04:40:46'),
-(2, 'KL-02', 1, 1, 10000, '2017-02-22 05:12:49', '2017-02-22 05:12:49');
+(2, 'KL-02', 2, 2, 10000, '2017-02-22 05:12:49', '2017-02-23 22:40:04');
 
 -- --------------------------------------------------------
 
@@ -110,7 +110,8 @@ CREATE TABLE `lembur_pegawais` (
 --
 
 INSERT INTO `lembur_pegawais` (`id`, `kode_lembur_id`, `pegawai_id`, `jumlah_jam`, `created_at`, `updated_at`) VALUES
-(6, 1, 6, 3, '2017-02-22 23:40:41', '2017-02-23 01:39:49');
+(6, 1, 6, 3, '2017-02-22 23:40:41', '2017-02-23 01:39:49'),
+(7, 2, 7, 3, '2017-02-23 22:39:10', '2017-02-23 22:39:10');
 
 -- --------------------------------------------------------
 
@@ -174,7 +175,8 @@ CREATE TABLE `pegawais` (
 --
 
 INSERT INTO `pegawais` (`id`, `nip`, `user_id`, `jabatan_id`, `golongan_id`, `photo`, `created_at`, `updated_at`) VALUES
-(6, '998876', 11, 1, 1, 'Capture.PNG', '2017-02-22 23:40:24', '2017-02-22 23:40:24');
+(6, '998876', 11, 1, 1, 'Capture.PNG', '2017-02-22 23:40:24', '2017-02-22 23:40:24'),
+(7, '99887678', 13, 2, 2, 'raisa.jpg', '2017-02-23 21:03:15', '2017-02-23 21:03:15');
 
 -- --------------------------------------------------------
 
@@ -201,7 +203,8 @@ CREATE TABLE `penggajians` (
 --
 
 INSERT INTO `penggajians` (`id`, `tunjangan_pegawai_id`, `jumlah_jam_lembur`, `jumlah_uang_lembur`, `gaji_pokok`, `total_gaji`, `tgl_pengambilan`, `status_pengambilan`, `petugas_penerima`, `created_at`, `updated_at`) VALUES
-(3, 1, 0, 0, 20000, 30000, '2023-02-17', 0, 'Rifki', '2017-02-23 01:41:16', '2017-02-23 01:41:16');
+(5, 1, 3, 30000, 20000, 60000, '2017-02-24', 1, 'Admin', '2017-02-23 21:47:24', '2017-02-23 23:11:51'),
+(9, 2, 3, 30000, 30000, 70000, '2017-02-24', 1, 'Admin', '2017-02-23 22:40:41', '2017-02-23 23:18:53');
 
 -- --------------------------------------------------------
 
@@ -248,7 +251,8 @@ CREATE TABLE `tunjangan_pegawais` (
 --
 
 INSERT INTO `tunjangan_pegawais` (`id`, `kode_tunjangan_id`, `pegawai_id`, `created_at`, `updated_at`) VALUES
-(1, 5, 6, '2017-02-23 00:30:27', '2017-02-23 00:30:27');
+(1, 5, 6, '2017-02-23 00:30:27', '2017-02-23 00:30:27'),
+(2, 6, 7, '2017-02-23 21:30:55', '2017-02-23 21:30:55');
 
 -- --------------------------------------------------------
 
@@ -273,7 +277,9 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `name`, `permision`, `email`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
 (1, 'Rifki', 'Admin', 'rifkiadriansyah@gmail.com', '$2y$10$OQ1RM9TnGFjMqdLu3RRZd.EropBKNiAX8.IjZNxPuPnlfK/2vrkKi', 'wQzrwb2WHtpYZnf6B0KBS9DJjBu8HK7ahEtZllNiI62dkIs8dDfMxdlxbK8t', '2017-02-21 04:39:44', '2017-02-23 01:41:29'),
-(11, 'Raisa', 'Bagian Keuangan', 'raisa@gmail.com', '$2y$10$mTd/A/mTRHnuBCEVb9Lx0.uySl0Hd4dDm34.l3eRFgRC9o4Dv4GDe', NULL, '2017-02-22 23:40:24', '2017-02-22 23:40:24');
+(11, 'Raisa', 'Bagian Keuangan', 'raisa@gmail.com', '$2y$10$mTd/A/mTRHnuBCEVb9Lx0.uySl0Hd4dDm34.l3eRFgRC9o4Dv4GDe', NULL, '2017-02-22 23:40:24', '2017-02-22 23:40:24'),
+(12, 'Admin', 'Admin', 'admin@gmail.com', '$2y$10$HmZcChc4I8y80YoMQvnUVOB.xqO3amOuFYt981pXvYXS7oa0VFacG', NULL, '2017-02-23 18:09:04', '2017-02-23 18:09:04'),
+(13, 'Safa', 'Admin', 'safa@gmail.com', '$2y$10$FNbf7hE0DAgoaC/i/4fF4OnQAfGeKtNUQLgb4w/yWDl3IdcaWnEG6', NULL, '2017-02-23 21:03:15', '2017-02-23 21:03:15');
 
 --
 -- Indexes for dumped tables
@@ -383,7 +389,7 @@ ALTER TABLE `kategory_lemburs`
 -- AUTO_INCREMENT for table `lembur_pegawais`
 --
 ALTER TABLE `lembur_pegawais`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `migrations`
 --
@@ -393,12 +399,12 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `pegawais`
 --
 ALTER TABLE `pegawais`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `penggajians`
 --
 ALTER TABLE `penggajians`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `tunjangans`
 --
@@ -408,12 +414,12 @@ ALTER TABLE `tunjangans`
 -- AUTO_INCREMENT for table `tunjangan_pegawais`
 --
 ALTER TABLE `tunjangan_pegawais`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --

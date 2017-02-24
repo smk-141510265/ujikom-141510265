@@ -1,8 +1,9 @@
 @extends('layouts.app')
 @section('content')
+				
 			        <div class="col-md-6 col-md-offset-0">
 			            <div class="panel panel-primary">
-			                <div class="panel-heading">Data Pegawai</div>
+			                <div class="panel-heading">Pegawai</div>
 			                <div class="panel-body">
 			                	<table border="2" class="table table-success table-border table-hover">
 									<thead >
@@ -69,6 +70,7 @@
 								</table>
 			                </div>
 			            </div>
+			        </div>
 			        </div>
 					<a  href="{{url('pegawai/create')}}" class="btn btn-primary form-control">Tambah</a>
 	

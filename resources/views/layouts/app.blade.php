@@ -24,6 +24,8 @@
     
         body {
     background-color: lightblue;
+   background-image:url('www.jpg');
+   
 }
 p {
     font-family: "Times New Roman", Georgia, Serif;
@@ -31,12 +33,15 @@ p {
 p.oblique {
     font-style: oblique;
 }
-
+h3 {
+    text-decoration: underline;
+}
     </style>
 </head>
 <body>
     <div id="app">
         <nav class="navbar navbar-inverse navbar-static-top">
+        
             <div class="container">
                 <div class="navbar-header">
 
@@ -69,8 +74,8 @@ p.oblique {
                         @else
                          <li><a href="{{ url('/jabatan') }}">Jabatan</a></li>
                           <li><a href="{{ url('/golongan') }}">Golongan</a></li>
-                           <li><a href="{{ url('/pegawai') }}">Pegawai</a></li>
                            <li><a href="{{ url('/kategori') }}">Kategori Lembur</a></li>
+                           <li><a href="{{ url('/pegawai') }}">Pegawai</a></li>
                            <li><a href="{{ url('/lembur') }}">Lembur Pegawai</a></li>
                            <li><a href="{{ url('/tunjangan') }}">Tunjangan</a></li>
                            <li><a href="{{ url('/tunja') }}">Tunjangan Pegawai</a></li>
